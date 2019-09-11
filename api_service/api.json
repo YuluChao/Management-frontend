@@ -14,18 +14,18 @@
 		     	"message": "Success",
 		     	"data": {
  		      		"clubInfo": {
-			            "name": "西交Link",
-			            "summary": "Interestring",           
-			            "introduction": "exciating",
-			            "locale": ["雁塔校区"],
-			            "type": "科技类",
+			            "name": "Link Club",
+			            "summary": "It is a interestring Internet club",           
+			            "introduction": "Join us!",
+			            "locale": ["UPC"],
+			            "type": "Technology",
 			            "image": "",
 			            "logo": "",
-			            "tag": "我们社团很厉害",            
-			            "email": "284013045@qq.com",
-			            "apply_url": "http://www.baidu.com",
+			            "tag": "Hot",            
+			            "email": "yuluchao0501@163.com",
+			            "apply_url": "http://yuluchao.github.io",
 			            "show_type": "native",
-			            "url": "http://www.baidu.com"
+			            "url": "http://yuluchao.github.io"
 		        	}
 		        }
 		    }
@@ -64,18 +64,18 @@
 		     	"message": "Success",
 		     	"data": {
  		      		"clubInfo": {
-			            "name": "西交Link",
-			            "summary": "Interestring",           
-			            "introduction": "exciating",
-			            "locale": ["雁塔校区"],
-			            "type": "科技类",
+			            "name": "Link Club",
+			            "summary": "It is a interestring Internet club",           
+			            "introduction": "Join us!",
+			            "locale": ["UPC"],
+			            "type": "Technology",
 			            "image": "",
 			            "logo": "",
-			            "tag": "我们社团很厉害",            
-			            "email": "284013045@qq.com",
-			            "apply_url": "http://www.baidu.com",
-			            "show_type": "app",
-			            "url": "http://www.baidu.com"
+			            "tag": "Hot",            
+			            "email": "yuluchao0501@163.com",
+			            "apply_url": "http://yuluchao.github.io",
+			            "show_type": "native",
+			            "url": "http://yuluchao.github.io"
 		        	}
 		        }
 		    }
@@ -116,21 +116,21 @@
  		      		"depts": [
 			            {
 			                "dept_id": "1",
-			                "name": "活动部",
+			                "name": "iOS",
 			                "image": "",
-			                "introduction": "哈哈哈哈哈哈"
+			                "introduction": "Join us!"
 			            },
 			            {
 			                "dept_id": "2",
-			                "name": "啊啊啊部",
+			                "name": "Web",
 			                "image": "",
-			                "introduction": "哈哈哈哈哈哈"
+			                "introduction": "Join us!"
 			            },
 			            {
 			                "dept_id": "3",
-			                "name": "你猜部",
+			                "name": "Android",
 			                "image": "",
-			                "introduction": "哈哈哈哈哈哈"
+			                "introduction": "Join us!"
 			            }
 		        	]
 		        }
@@ -227,17 +227,17 @@
  		      		"activities": [
 			            {
 			                "activity_id": "1",
-			                "name": "K歌之王",
+			                "name": "Discussion",
 			                "image": "",
-			                "tag": "精品活动",
+			                "tag": "Hot",
 			                "introduction": "Interestring"
 			            },
 			            {
 			                "activity_id": "2",
-			                "name": "诗歌朗诵大赛",
+			                "name": "Movie Day",
 			                "image": "",
-			                "tag": "普通比赛",
-			                "introduction": "exciating"
+			                "tag": "Hot",
+			                "introduction": "Interestring"
 			            }
 			        ]
 		        }
@@ -331,7 +331,7 @@
 		     	"status": 200,
 		     	"message": "Success",
 		     	"data": {
-		     		"email": "1000@qq.com",
+		     		"email": "1000000@gmail.com",
 		     		"phone": "1000000"
 		     	}
 		     }
@@ -371,165 +371,125 @@
 		     	"data": {
 		     		"records": [
 			            {
-					        "name": "郭家琪",
-					        "content": "修改基本信息",
-					        "time": "2017-6-18 14:01"
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:02"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:03"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:04"
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:05"
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:06"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:07"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:08"
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
+					    },
+					    {
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:09"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:10"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:11"
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
+					    },
+					    {
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:12"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:13"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:14"
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
+					    },
+					    {
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:15"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:16"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:17"
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
+					    },
+					    {
+					        "name": "Yulu Chao",
+					        "content": "Change activity info",
+					        "time": "2019-6-18 14:01"
 					    }, 
 					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:18"
+					        "name": "Lucy",
+					        "content": "Change department info",
+					        "time": "2019-6-18 14:02"
 					    }, 
 					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:19"
+					        "name": "Ada",
+					        "content": "Change contact info",
+					        "time": "2019-6-18 14:03"
 					    }, 
 					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:20"
-					    }, 
-					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:21"
-					    }, 
-					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:22"
-					    }, 
-					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:23"
-					    }, 
-					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:24"
-					    }, 
-					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:25"
-					    }, 
-					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:26"
-					    }, 
-					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:27"
-					    }, 
-					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:28"
-					    }, 
-					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:29"
-					    }, 
-					    {
-					        "name": "李云鹏",
-					        "content": "修改部门信息",
-					        "time": "2017-6-18 14:30"
-					    }, 
-					    {
-					        "name": "郑璇之",
-					        "content": "修改活动信息",
-					        "time": "2017-6-18 14:31"
-					    }, 
-					    {
-					        "name": "钞雨露",
-					        "content": "修改联系方式",
-					        "time": "2017-6-18 14:32"
-					    }  
+					        "name": "Su",
+					        "content": "Change basic info",
+					        "time": "2019-6-18 14:04"
+					    }
 			        ]
 		     	}
 		     }

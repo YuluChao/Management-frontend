@@ -18,10 +18,10 @@
         </forminput>
       </el-form-item>
     	<div class="contactus">
-    		<span class="title">联系我们</span>
-    		<span class="remark">屈同学 微信账号：qushuaicheng</span>
+    		<span class="title">Contact us</span>
+    		<span class="remark">Ms. Chao</span>
     	</div>
-    	<greenbutton name="保  存" style="float:right" v-on:submit="submitForm('contactinput')"></greenbutton>
+    	<greenbutton name="Save" style="float:right" v-on:submit="submitForm('contactinput')"></greenbutton>
     </el-form>
 	</div>
 </template>
@@ -47,32 +47,32 @@ export default {
           rule: [{
             type: 'string',
             pattern: /(\(\d{3,4}\)|\d{3,4}-|\s)?\d{7,14}/,
-            message: '请输入正确的联系电话',
+            message: 'Please input correct phone number',
             trigger: 'blur,change'
           }, {
-            required: true, message: '联系电话不能为空', trigger: 'blur'
+            required: true, message: 'Contact number can not be empty', trigger: 'blur'
           }]
         },
         email: {
           input: '',
           rule: [{
             type: 'email',
-            message: '请输入正确的联系邮箱',
+            message: 'Please input correct email address',
             trigger: 'blur,change'
           }, {
             required: true,
-            message: '联系邮箱不能为空',
+            message: 'Contact email can not be empty',
             trigger: 'blur'
           }]
         }
       },
       contactphone: {
-        label: '联系电话*',
-        remark: '该电话不会公开，仅用于零客工作室联系你'
+        label: 'Contact Number*',
+        remark: 'The number will not be made public'
       },
       contactemail: {
-        label: '联系邮箱*',
-        remark: '该邮箱不会公开，仅用于零客工作室联系你'
+        label: 'Contact Email*',
+        remark: 'The email will not be made public'
       }
     }
   },
@@ -86,7 +86,7 @@ export default {
             if (res.status === RES_STATUS.SUCCESS) {
               Message({
                 type: 'success',
-                message: '修改成功',
+                message: 'Modify successfully',
                 showClose: true
               })
             } else {
@@ -94,33 +94,33 @@ export default {
                 var errorMsg = ''
                 switch (res.msg.hint) {
                   case 'phone':
-                    errorMsg = '联系电话'
+                    errorMsg = 'Contact number'
                     break
                   case 'email':
-                    errorMsg = '联系邮箱'
+                    errorMsg = 'Contact email'
                     break
-                  default: errorMsg = '联系方式'
+                  default: errorMsg = 'Contact information'
                 }
                 Message({
-                  message: errorMsg + '有误，保存失败',
+                  message: errorMsg + 'is error, please modify and try again',
                   type: 'error',
                   showClose: true
                 })
               } else if (res.status === RES_STATUS.SERVER_ERROR) {
                 Message({
-                  message: '服务器错误',
+                  message: 'Server error',
                   type: 'error',
                   showClose: true
                 })
               } else if (res.status === RES_STATUS.NOT_FOUND) {
                 Message({
-                  message: '页面不存在',
+                  message: 'Page does not exist',
                   type: 'error',
                   showClose: true
                 })
               } else {
                 Message({
-                  message: '未知错误',
+                  message: 'Unknown mistake',
                   type: 'error',
                   showClose: true
                 })
@@ -130,14 +130,14 @@ export default {
             contactLoading.close()
             console.error(err)
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
           })
         } else {
           Message({
-            message: '信息有误，提交失败',
+            message: 'Information is error, please modify and try again',
             type: 'error',
             showClose: true
           })
@@ -156,13 +156,13 @@ export default {
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -170,7 +170,7 @@ export default {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -179,7 +179,7 @@ export default {
     }).catch((res) => {
       isLoading.close()
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

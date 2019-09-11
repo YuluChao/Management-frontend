@@ -7,10 +7,10 @@
 
 			<i class="el-icon-edit" @click="editName" v-show="activityInfo.show"></i>
 
-      <span class="error" v-show="isempty && activityInfo.show">活动名称不能为空</span>
-      <span class="error" v-show="isdefault && activityInfo.show">请修改活动名称</span>
+      <span class="error" v-show="isempty && activityInfo.show">Activity Name can not be empty</span>
+      <span class="error" v-show="isdefault && activityInfo.show">Please modify activity name</span>
 
-			<a href="javascript:void(0)" class="delete" v-show="activityInfo.id!=='-1'" @click="deleteItem">删除</a>
+			<a href="javascript:void(0)" class="delete" v-show="activityInfo.id!=='-1'" @click="deleteItem">Delete</a>
 		</div>
 
     <transition name="expand">
@@ -20,21 +20,21 @@
             <el-form-item>
               <forminput :formStyle="activitytag" :formInput="activityInfo.tag"></forminput>
             </el-form-item>
-            <el-form-item prop="introduction.input" :rules="{required: true, message: '活动介绍不能为空', trigger: 'blur'}">
+            <el-form-item prop="introduction.input" :rules="{required: true, message: 'Activity introduction can not be empty', trigger: 'blur'}">
               <formtextarea :formStyle="activityintro" :formInput="activityInfo.introduction" style="margin-top:-5px"></formtextarea>
             </el-form-item>
           </el-form>
         </div>
         <div class="bottom">
           <div style="float:left">
-            <span class="title">活动图片(16:9)</span>
+            <span class="title">Image* (16:9)</span>
             <div class="wrapper">
-              <p @click="addActPicture">更换图片</p>
+              <p @click="addActPicture">Change Image</p>
               <img style="width:260px;height:150px;" @click="addActPicture" :src="activityInfo.image">
               </img>
             </div> 
           </div>
-          <greenbutton name="保 存" v-on:submit="submitForm('activityInfo')"></greenbutton>
+          <greenbutton name="Save" v-on:submit="submitForm('activityInfo')"></greenbutton>
         </div>
   		</div>
     </transition>
@@ -68,7 +68,7 @@ export default{
   computed: {
     activityintro () {
       return {
-        label: '活动介绍*',
+        label: 'Introduction*',
         input: this.activityInfo.introduction.input,
         minrows: 5,
         maxrows: 9
@@ -76,8 +76,8 @@ export default{
     },
     activitytag () {
       return {
-        label: '自定义标签',
-        remark: '显示在活动后面，字数不宜过多',
+        label: 'Custom Tag',
+        remark: 'Displayed after the activity',
         input: this.activityInfo.tag.input
       }
     }
@@ -85,7 +85,7 @@ export default{
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
-        if (this.activityInfo.name === '添加活动') {
+        if (this.activityInfo.name === 'Add Activity') {
           this.isdefault = true
         }
         if (valid && !this.isempty && !this.isdefault) {
@@ -105,7 +105,7 @@ export default{
               activityLoading.close()
               if (res.status === RES_STATUS.SUCCESS) {
                 Message({
-                  message: '修改成功，手动清除App缓存即可查看',
+                  message: 'Modify successfully',
                   type: 'success',
                   showClose: true
                 })
@@ -114,39 +114,39 @@ export default{
                   var errorMsg = ''
                   switch (res.msg.hint) {
                     case 'name':
-                      errorMsg = '活动名称'
+                      errorMsg = 'Activity name'
                       break
                     case 'image':
-                      errorMsg = '活动照片'
+                      errorMsg = 'Activity image'
                       break
                     case 'introduction':
-                      errorMsg = '活动介绍'
+                      errorMsg = 'Activity introduction'
                       break
                     case 'tag':
-                      errorMsg = '活动标签'
+                      errorMsg = 'Activity tag'
                       break
-                    default: errorMsg = '活动信息'
+                    default: errorMsg = 'Activity information'
                   }
                   Message({
-                    message: errorMsg + '有误，保存失败',
+                    message: errorMsg + 'is error, please modify and try again',
                     type: 'error',
                     showClose: true
                   })
                 } else if (res.status === RES_STATUS.SERVER_ERROR) {
                   Message({
-                    message: '服务器错误',
+                    message: 'Server error',
                     type: 'error',
                     showClose: true
                   })
                 } else if (res.status === RES_STATUS.NOT_FOUND) {
                   Message({
-                    message: '页面不存在',
+                    message: 'Page does not exist',
                     type: 'error',
                     showClose: true
                   })
                 } else {
                   Message({
-                    message: '未知错误',
+                    message: 'Unknown mistake',
                     type: 'error',
                     showClose: true
                   })
@@ -155,7 +155,7 @@ export default{
             }).catch((err) => {
               activityLoading.close()
               Message({
-                message: '服务器错误',
+                message: 'Server error',
                 type: 'error',
                 showClose: true
               })
@@ -164,7 +164,7 @@ export default{
           }
         } else {
           Message({
-            message: '信息提交失败',
+            message: 'Information is error, please modify and try again',
             type: 'error',
             showClose: true
           })
@@ -174,7 +174,7 @@ export default{
     },
     showContent () {
       this.activityInfo.show = !this.activityInfo.show
-      if (this.activityInfo.name === '添加活动' && this.activityInfo.show === true && this.activityInfo.id === '-1') {
+      if (this.activityInfo.name === 'Add Activity' && this.activityInfo.show === true && this.activityInfo.id === '-1') {
         this.activityInfo.name = ''
         this.editable = true
       }
@@ -183,7 +183,7 @@ export default{
       if (this.activityInfo.name === '') {
         this.isempty = true
       }
-      if (this.activityInfo.name !== '添加活动') {
+      if (this.activityInfo.name !== 'Add Activity') {
         this.isdefault = false
       }
       if (this.activityInfo.name !== '') {
@@ -192,7 +192,7 @@ export default{
     },
     editName () {
       if (this.activityInfo.id === '-1' && this.editable === true && this.activityInfo.name === '') {
-        this.activityInfo.name = '添加活动'
+        this.activityInfo.name = 'Add Activity'
         this.editable = false
         this.isempty = false
       } else if (this.editable === false) {

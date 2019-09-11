@@ -1,13 +1,13 @@
 <template>
   <div id="admin">
     <div class="admin-num">
-      <span class="title">历史记录列表</span>
+      <span class="title">History List</span>
     </div>
     <div class="table">
       <div class="table-header">
-        <span class="name">姓名</span>
-        <span class="content">操作记录</span>
-        <span class="time">时间</span>
+        <span class="name">Name</span>
+        <span class="content">Operation</span>
+        <span class="time">Time</span>
       </div>
       <div class="table-content" v-for="admin in currentadmins">
         <span class="name">{{ admin.name }}</span>
@@ -15,7 +15,7 @@
         <span class="time">{{ admin.time }}</span>
       </div>
       <div class="tips">
-          <span>Tips:&nbsp;&nbsp;历史记录可以显示所有操作记录</span>
+          <span>Tips:&nbsp;&nbsp;History list can show all operation records</span>
       </div>
     </div>
     <el-pagination
@@ -63,13 +63,13 @@ export default {
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -77,7 +77,7 @@ export default {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -86,7 +86,7 @@ export default {
     }).catch((res) => {
       isLoading.close()
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

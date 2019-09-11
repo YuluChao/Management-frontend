@@ -17,18 +17,18 @@
       </el-form-item>
       <div class="tips">
         <span>Tips:</span>
-        <p>1. 若需要修改社团名称，请微信联系：qushuaicheng</br>
-        2. 段落前不宜添加空格</br>
-        3. 段落之间添加空白行会有更好的显示效果</p>
+        <p>1. If you need to change club name, please contact us</br>
+        2. It is not advisable to add spaces before the paragraph</br>
+        3. Adding blank lines between paragraphs will give you a better display</p>
       </div>
       <div class="basic-content">
         <div class="left">
-          <p class="title" style="line-height:32px">社团类别*</p>
-          <p class="title" style="line-height:80px">所在校区*</p>
-          <p class="title" style="line-height:68px">社团Logo</p>
+          <p class="title" style="line-height:32px">Type*</p>
+          <p class="title" style="line-height:80px">Location*</p>
+          <p class="title" style="line-height:68px">Logo</p>
         </div>
         <div class="middle">
-          <el-select  v-model="defaulttype" placeholder="请选择" @change="changeType()">
+          <el-select  v-model="defaulttype" placeholder="None" @change="changeType()">
             <el-option
             v-for="item in types"
             :label="item.label"
@@ -40,30 +40,30 @@
           <button 
             type="button" 
             style="margin-right:13px;" 
-            v-on:click="changeLocale('兴庆校区')" 
-            v-bind:class="{ buttonfocus: club.locale.indexOf('兴庆校区')!==-1 }">
-            兴庆校区
+            v-on:click="changeLocale('UPC')" 
+            v-bind:class="{ buttonfocus: club.locale.indexOf('UPC')!==-1 }">
+            UPC
           </button>
           <button 
             type="button" 
-            v-on:click="changeLocale('雁塔校区')"  
-            v-bind:class="{ buttonfocus: club.locale.indexOf('雁塔校区')!==-1 }">
-            雁塔校区
+            v-on:click="changeLocale('HSC')"  
+            v-bind:class="{ buttonfocus: club.locale.indexOf('HSC')!==-1 }">
+            HSC
           </button>
           <div class="el-form-item__error">
-            <span v-bind:class="{ show: club.locale.length !== 0 }" >请选择所在校区</span>
+            <span v-bind:class="{ show: club.locale.length !== 0 }" >Please choose the location</span>
           </div>
           <div class="wrapper"> 
-            <p @click="addLogo()">更换</p>
+            <p @click="addLogo()">Change Image</p>
             <img style="width:53px;height:53px;" @click="addLogo()" :src='club.logo' id="logo">
             </img>
           </div> 
         </div>
         <div class="right">
-          <span class="title">宣传图片</span>
-          <span class="remark">被搜索、置顶、详情时展示的图片(比例为16:9)</span>
+          <span class="title">Poster</span>
+          <span class="remark">(16:9)</span>
           <div class="wrapper">
-            <p @click="addPoster()">更换图片</p>
+            <p @click="addPoster()">Change image</p>
             <img style="width:256px;height:144px;" @click="addPoster()" :src='club.poster' id="poster">
             </img>
           </div>
@@ -80,10 +80,10 @@
       </el-form-item>
       <div class="showtype">
         <div class="left">
-          <span class="title">展示方式*</span>
+          <span class="title">Display mode*</span>
           <el-button-group>
-            <el-button v-bind:class="{ buttonfocus:!club.show_type }" v-on:click="changeAuto">自动生成</el-button>
-            <el-button v-bind:class="{ buttonfocus:club.show_type }" v-on:click="changeCustom">自定义网页</el-button>
+            <el-button v-bind:class="{ buttonfocus:!club.show_type }" v-on:click="changeAuto">Auto</el-button>
+            <el-button v-bind:class="{ buttonfocus:club.show_type }" v-on:click="changeCustom">Custom</el-button>
           </el-button-group>
         </div>
         <div class="right" v-if="club.show_type">
@@ -91,22 +91,16 @@
             <el-input v-model="club.url.input"></el-input>
           </el-form-item>
         </div>
-        <a target="_blank" :href="club.url.input" v-if="club.show_type">查看网页效果</a>
+        <a target="_blank" :href="club.url.input" v-if="club.show_type">View demo</a>
       </div> 
       <div class="tips">
         <span>Tips:</span>
-        <p>1. 默认自动生成可以满足绝大多数社团的需求，选择自动生成即可</br>
-        2. 自定义网页是提供给有能力自行开发招新页面的社团，注意自行测试，出现问题可联系我们进行联调</br>
-        3. 如果选择自定义网页，当用户点击您的社团后，会直接打开该地址而不会进入我们开发的页面
-        </p>
-      </div>
-      <div class="tips">
-        <span style="color:#FF4949">重要说明：</span>
-        <p style="color:#FF4949">1. 因App版本问题，新旧版本社团分类显示有所差异，但不影响使用</br>2. 请使最新版本App（iOS 2.5.1 Android 2.4.6）下载地址http://xjtu.link/（预计8月19日更新）
+        <p>1. The default automatic generation can meet the needs of most clubs</br>
+        2. The custom page is provided to the club that has the ability to develop page on its own.
         </p>
       </div>
       <el-form-item>
-      <greenbutton name="保 存" v-on:submit="submitForm('clubinput')"></greenbutton>  
+      <greenbutton name="Save" v-on:submit="submitForm('clubinput')"></greenbutton>  
       </el-form-item>
     </el-form>
     <vue-core-image-upload  
@@ -116,7 +110,7 @@
       extensions="image/jpg,image/jpeg,image/png"
       :max-file-size="512000"
       text=""
-      :cropBtn="{ok:'确 定',cancel:'取 消'}"
+      :cropBtn="{ok:'OK',cancel:'Cancel'}"
       @imagechanged="logoChanged"
       @errorhandle="errorHandle"
     >
@@ -128,7 +122,7 @@
       extensions="image/jpg,image/jpeg,image/png"
       :max-file-size="512000"
       text=""
-      :cropBtn="{ok:'确 定',cancel:'取 消'}"
+      :cropBtn="{ok:'OK',cancel:'Cancel'}"
       @imagechanged="posterChanged"
       @errorhandle="errorHandle"
     >
@@ -157,51 +151,51 @@ export default {
   data () {
     return {
       types: [{
-        value: '人文理论类',
-        label: '人文理论类'
+        value: 'Humanities',
+        label: 'Humanities'
       }, {
-        value: '科学技术类',
-        label: '科学技术类'
+        value: 'Technology',
+        label: 'Technology'
       }, {
-        value: '志愿公益类',
-        label: '志愿公益类'
+        value: 'PublicWalfare',
+        label: 'PublicWalfare'
       }, {
-        value: '文艺体育类',
-        label: '文艺体育类'
+        value: 'Sports',
+        label: 'Sports'
       }, {
-        value: '创新创业类',
-        label: '创新创业类'
+        value: 'Innovation',
+        label: 'Innovation'
       }, {
-        value: '自律互助类',
-        label: '自律互助类'
+        value: 'MutualAid',
+        label: 'MutualAid'
       }, {
-        value: '信息传媒类',
-        label: '信息传媒类'
+        value: 'Media',
+        label: 'Media'
       }],
       defaulttype: '',
       summarystyle: {
-        label: '社团简介*',
-        remark: '必填项，不宜超过80个字',
+        label: 'Summary*',
+        remark: 'Required fields',
         minrows: 1,
         maxrows: 2
       },
       introductionstyle: {
-        label: '社团详情*',
-        remark: '社团详细介绍，字数不限',
+        label: 'Introduction*',
+        remark: 'Details',
         minrows: 6,
         maxrows: 10
       },
       emailstyle: {
-        label: '社团公邮',
+        label: 'Email',
         remark: ''
       },
       tagstyle: {
-        label: '自定义标签',
-        remark: '显示在社团名字后面，字数不宜过多，例如：优秀社团、甲级社团'
+        label: 'Custom Tag',
+        remark: 'Displayed after the club name'
       },
       applyurlstyle: {
-        label: '招新链接',
-        remark: '点击“加入社团”后，跳转的页面，推荐使用 http://www.mikecrm.com/ 制作在线招新表单'
+        label: 'Recruit Link',
+        remark: ''
       },
       club: {
         name: '',
@@ -219,21 +213,21 @@ export default {
       },
       rules: {
         summary: {
-          required: true, message: '社团简介不能为空', trigger: 'blur,change'
+          required: true, message: 'Club summary cannot be empty', trigger: 'blur,change'
         },
         introduction: {
-          required: true, message: '社团详情不能为空', trigger: 'blur,change'
+          required: true, message: 'Club introduction cannot be empty', trigger: 'blur,change'
         },
         email: {
-          type: 'email', message: '请输入正确的邮箱地址', trigger: 'blur,change'
+          type: 'email', message: 'Please input correct email address', trigger: 'blur,change'
         },
         apply_url: {
-          type: 'url', message: '请输入正确的网页链接，例如：http://www.baidu.com', trigger: 'blur,change'
+          type: 'url', message: 'Please input correct web link, such as: http://www.google.com', trigger: 'blur,change'
         },
         url: [{
-          type: 'url', message: '请输入正确的网页链接，例如：http://www.baidu.com', trigger: 'blur,change'
+          type: 'url', message: 'Please input correct web link, such as: http://www.google.com', trigger: 'blur,change'
         }, {
-          required: true, message: '网页链接不能为空', trigger: 'blur,change'
+          required: true, message: 'Web link cannot be empty', trigger: 'blur,change'
         }]
       }
     }
@@ -270,7 +264,7 @@ export default {
             basicLoading.close()
             if (res.status === RES_STATUS.SUCCESS) {
               Message({
-                message: '修改成功，手动清除App缓存即可查看',
+                message: 'Modify successfully',
                 type: 'success',
                 showClose: true
               })
@@ -279,51 +273,51 @@ export default {
                 var errorMsg = ''
                 switch (res.msg.hint) {
                   case 'summary':
-                    errorMsg = '社团简介'
+                    errorMsg = 'Club summary'
                     break
                   case 'introduction':
-                    errorMsg = '社团详情'
+                    errorMsg = 'Club introduction'
                     break
                   case 'locale':
-                    errorMsg = '所在校区'
+                    errorMsg = 'Location'
                     break
                   case 'type':
-                    errorMsg = '社团类别'
+                    errorMsg = 'Club type'
                     break
                   case 'image':
-                    errorMsg = '宣传图片'
+                    errorMsg = 'Poster'
                     break
                   case 'logo':
-                    errorMsg = '社团Logo'
+                    errorMsg = 'Club Logo'
                     break
                   case 'email':
-                    errorMsg = '社团公邮'
+                    errorMsg = 'Club email'
                     break
                   case 'tag':
-                    errorMsg = '自定义标签'
+                    errorMsg = 'Custom tag'
                     break
                   case 'apply_url':
-                    errorMsg = '招新链接'
+                    errorMsg = 'Recruit link'
                     break
                   case 'url':
-                    errorMsg = '展示链接'
+                    errorMsg = 'Display link'
                     break
-                  default: errorMsg = '社团信息'
+                  default: errorMsg = 'Club information'
                 }
                 Message({
-                  message: errorMsg + '有误，保存失败',
+                  message: errorMsg + 'is error, please modify and try again',
                   type: 'error',
                   showClose: true
                 })
               } else if (res.status === RES_STATUS.SERVER_ERROR) {
                 Message({
-                  message: '服务器错误',
+                  message: 'Server error',
                   type: 'error',
                   showClose: true
                 })
               } else {
                 Message({
-                  message: '未知错误',
+                  message: 'Unknown mistake',
                   type: 'error',
                   showClose: true
                 })
@@ -332,7 +326,7 @@ export default {
           }).catch((err) => {
             basicLoading.close()
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
@@ -340,7 +334,7 @@ export default {
           })
         } else {
           Message({
-            message: '信息有误，提交失败',
+            message: 'Information is error',
             type: 'error',
             showClose: true
           })
@@ -385,13 +379,13 @@ export default {
     errorHandle () {
       if (arguments[0] === 'TYPE ERROR') {
         Message({
-          message: '图片格式必须为png，jpeg或jpg',
+          message: 'Image format must be png, jpeg or jpg',
           type: 'error',
           showClose: true
         })
       } else if (arguments[0] === 'FILE IS TOO LARGER MAX FILE IS 500.00kB') {
         Message({
-          message: '图片大小不能超过500KB',
+          message: 'Image size can not exceed 500KB',
           type: 'error',
           showClose: true
         })
@@ -419,13 +413,13 @@ export default {
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -433,7 +427,7 @@ export default {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -442,7 +436,7 @@ export default {
     }).catch((res) => {
       isLoading.close()
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

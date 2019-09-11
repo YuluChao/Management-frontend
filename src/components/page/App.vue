@@ -20,7 +20,7 @@ body {
   height: 100%;
   padding: 0;
   margin: 0;
-  font-family: '微软雅黑';
+/*  font-family: '微软雅黑';*/
 }
 p,ul,li {
   padding: 0;
@@ -32,12 +32,12 @@ p,ul,li {
   height: 100%;
 }
 span, p{
-  font-family: '微软雅黑';
+/*  font-family: '微软雅黑';*/
 }
 a {
   color: #37383a;
   text-decoration: none;
-  font-family: '微软雅黑';
+/*  font-family: '微软雅黑';*/
 }
 /* 提醒文字 */
 .tips {

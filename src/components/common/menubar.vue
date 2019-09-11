@@ -3,11 +3,11 @@
 		<p>{{ clubname }}</p>
 		<div class="menu-content">	
 			<ul>
-				<li><router-link to="/club/basic">基本信息</router-link></li>
-				<li><router-link to="/club/department">部门信息</router-link></li>
-				<li><router-link to="/club/activity">活动信息</router-link></li>
-        <li><router-link to="/club/contact">联系方式</router-link></li>
-				<li><router-link to="/club/admin">历史记录</router-link></li>			
+				<li><router-link to="/club/basic">Basic Information</router-link></li>
+				<li><router-link to="/club/department">Department Infomation</router-link></li>
+				<li><router-link to="/club/activity">Activity Information</router-link></li>
+        <li><router-link to="/club/contact">Contact</router-link></li>
+				<li><router-link to="/club/admin">History</router-link></li>			
 			</ul>	
 		</div>
 	</div>
@@ -32,13 +32,13 @@ export default{
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -46,7 +46,7 @@ export default{
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -54,7 +54,7 @@ export default{
       }
     }).catch((res) => {
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

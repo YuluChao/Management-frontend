@@ -1,8 +1,8 @@
 <template>
 	<div id="activity">
     <div class="act-num">
-      <span class="title">活动列表</span>
-      <span class="remark">当前活动数：{{ activities.length }}</span>
+      <span class="title">Activity List</span>
+      <span class="remark">Current Activity Num：{{ activities.length }}</span>
     </div>
     <div class="list" >
       <transition-group name="up">
@@ -31,24 +31,24 @@
       </activityitem> 
     </div>
     <div class="tips">
-      <span>Tips:&nbsp;&nbsp;点击标题可以进行修改，点击右侧向上箭头可以调整顺序</span>
+      <span>Tips:&nbsp;&nbsp;Click the title to edit the content;Click the arrow on the right to adjust the order</span>
     </div>
     <el-dialog 
-      title="确认删除" 
+      title="Confirm Deletion" 
       v-model="dialogVisible" 
       top="30%" 
       :show-close="false">
-      <span>确认删除活动“{{ deleteActivityName }}”吗？</span>
+      <span>Are you sure to delete “{{ deleteActivityName }}”?</span>
       <div slot="footer">
-        <button type="button" class="cancel" @click="dialogVisible = false">取 消</button>
-        <button type="button" class="confirm" v-on:click="deleteConfirm">确&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+        <button type="button" class="cancel" @click="dialogVisible = false">Cancel</button>
+        <button type="button" class="confirm" v-on:click="deleteConfirm">OK</button>
       </div>
     </el-dialog>
     <vue-core-image-upload  
       crop-ratio="16:9" 
       :crop="true" 
       text=""
-      :cropBtn="{ok:'确 定',cancel:'取 消'}"
+      :cropBtn="{ok:'OK',cancel:'Cancel'}"
       crop="local"
       extensions="image/jpg,image/jpeg,image/png"
       :max-file-size="512000"
@@ -77,7 +77,7 @@ export default {
     return {
       activities: [],
       defaultActivity: {
-        name: '添加活动',
+        name: 'Add Activity',
         tag: {input: ''},
         introduction: {input: ''},
         image: activityImg,
@@ -112,14 +112,14 @@ export default {
             show: false,
             id: res.data.activity_id
           })
-          this.defaultActivity.name = '添加活动'
+          this.defaultActivity.name = 'Add Activity'
           this.defaultActivity.introduction.input = ''
           this.defaultActivity.tag.input = ''
           this.defaultActivity.image = activityImg
           this.defaultActivity.show = false
           this.defaultActivity.id = '-1'
           Message({
-            message: '添加成功，手动清除App缓存即可查看',
+            message: 'Add successfully',
             type: 'success'
           })
         } else {
@@ -127,39 +127,39 @@ export default {
             var errorMsg = ''
             switch (res.msg.hint) {
               case 'name':
-                errorMsg = '活动名称'
+                errorMsg = 'Activity name'
                 break
               case 'image':
-                errorMsg = '活动图片'
+                errorMsg = 'Activity image'
                 break
               case 'introduction':
-                errorMsg = '活动介绍'
+                errorMsg = 'Activity introduction'
                 break
               case 'tag':
-                errorMsg = '自定义标签'
+                errorMsg = 'Activity tag'
                 break
-              default: errorMsg = '活动信息'
+              default: errorMsg = 'Activity information'
             }
             Message({
-              message: errorMsg + '有误，添加失败',
+              message: errorMsg + 'is error，pleas modify and try again',
               type: 'error',
               showClose: true
             })
           } else if (res.status === RES_STATUS.SERVER_ERROR) {
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
           } else if (res.status === RES_STATUS.NOT_FOUND) {
             Message({
-              message: '页面不存在',
+              message: 'Page dose not exist',
               type: 'error',
               showClose: true
             })
           } else {
             Message({
-              message: '未知错误',
+              message: 'Unknown mistake ',
               type: 'error',
               showClose: true
             })
@@ -168,7 +168,7 @@ export default {
       }).catch((res) => {
         activityLoading.close()
         Message({
-          message: '服务器错误',
+          message: 'Server Error',
           type: 'error',
           showClose: true
         })
@@ -195,25 +195,25 @@ export default {
             }
           }
           Message({
-            message: '删除成功',
+            message: 'Delete successfully',
             type: 'success'
           })
         } else {
           if (res.status === RES_STATUS.SERVER_ERROR) {
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
           } else if (res.status === RES_STATUS.NOT_FOUND) {
             Message({
-              message: '页面不存在',
+              message: 'Page does not exist',
               type: 'error',
               showClose: true
             })
           } else {
             Message({
-              message: '未知错误',
+              message: 'Unknown mistake',
               type: 'error',
               showClose: true
             })
@@ -222,7 +222,7 @@ export default {
       }).catch((res) => {
         delLoading.close()
         Message({
-          message: '服务器错误',
+          message: 'Server error',
           type: 'error'
         })
       })
@@ -235,13 +235,13 @@ export default {
       console.log(arguments[0])
       if (arguments[0] === 'TYPE ERROR') {
         Message({
-          message: '图片格式必须为png，jpeg或jpg',
+          message: 'Image format must be png, jpeg or jpg',
           type: 'error',
           showClose: true
         })
       } else if (arguments[0] === 'FILE IS TOO LARGER MAX FILE IS 500.00kB') {
         Message({
-          message: '图片大小不能超过500KB',
+          message: 'Image size can not exceed 500KB',
           type: 'error',
           showClose: true
         })
@@ -267,26 +267,26 @@ export default {
           if (res.status === RES_STATUS.SUCCESS) {
             Message({
               type: 'success',
-              message: '调整顺序成功',
+              message: 'Adjust order successfully',
               showClose: true
             })
             this.activities[index] = this.activities.splice(index - 1, 1, this.activities[index])[0]
           } else {
             if (res.status === RES_STATUS.SERVER_ERROR) {
               Message({
-                message: '服务器错误',
+                message: 'Server error',
                 type: 'error',
                 showClose: true
               })
             } else if (res.status === RES_STATUS.NOT_FOUND) {
               Message({
-                message: '页面不存在',
+                message: 'Page does not exist',
                 type: 'error',
                 showClose: true
               })
             } else {
               Message({
-                message: '未知错误',
+                message: 'Unknown error',
                 type: 'error',
                 showClose: true
               })
@@ -296,7 +296,7 @@ export default {
           upLoading.close()
           console.error(err)
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
@@ -322,13 +322,13 @@ export default {
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -336,7 +336,7 @@ export default {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -345,7 +345,7 @@ export default {
     }).catch((res) => {
       isLoading.close()
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

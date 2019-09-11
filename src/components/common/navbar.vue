@@ -1,8 +1,8 @@
 <template>
 	<div class="navbar">
 		<div class="nav-content">
-			<p>西交Link社团管理页面</p>
-			<a href="javascript:void(0)" @click="logout">注销</a>
+			<p>Link Club Management</p>
+			<a href="javascript:void(0)" @click="logout">Logout</a>
 		</div>
 	</div>
 </template>
@@ -20,26 +20,26 @@ export default{
         if (res.status === RES_STATUS.SUCCESS) {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
           Message({
-            message: '注销成功',
+            message: 'Logout successfully',
             type: 'success',
             showClose: true
           })
         } else {
           if (res.status === RES_STATUS.SERVER_ERROR) {
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
           } else if (res.status === RES_STATUS.NOT_FOUND) {
             Message({
-              message: '页面不存在',
+              message: 'Page does not exist',
               type: 'error',
               showClose: true
             })
           } else {
             Message({
-              message: '未知错误',
+              message: 'Unknown mistake',
               type: 'error',
               showClose: true
             })
@@ -47,7 +47,7 @@ export default{
         }
       }).catch((err) => {
         Message({
-          message: '服务器错误',
+          message: 'Server error',
           type: 'error',
           showClose: true
         })
@@ -65,7 +65,7 @@ export default{
   height: 87px;
   background-color: #000;
   color: #fff;
-  font-family: "黑体";
+/*  font-family: "黑体";*/
 }
 .navbar .nav-content {
   margin-left: auto;

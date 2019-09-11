@@ -23,7 +23,7 @@
 .formtextarea .el-textarea__inner{
   border-color: #d9d9d9;
   resize:none;
-  font-family: "黑体";
+/*  font-family: "黑体";*/
   font-size: 14px;
   line-height: 20px;
 }

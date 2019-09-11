@@ -5,30 +5,30 @@
 
 			<a href="javascript:void(0)" class="name" v-show="!editable" @click="showContent">{{ departmentInfo.name }}</a>
       <a href="javascript:void(0)"><i class="el-icon-edit" @click="editName" v-show="departmentInfo.show"></i></a>
-      <span class="error" v-show="isempty && departmentInfo.show">部门名称不能为空</span>
-      <span class="error" v-show="isdefault && departmentInfo.show">请修改部门名称</span>
-			<a href="javascript:void(0)" class="delete" v-show="departmentInfo.id!=='-1'" v-on:click="deleteItem">删除</a>
+      <span class="error" v-show="isempty && departmentInfo.show">Department name can not be empty</span>
+      <span class="error" v-show="isdefault && departmentInfo.show">Please modify department name</span>
+			<a href="javascript:void(0)" class="delete" v-show="departmentInfo.id!=='-1'" v-on:click="deleteItem">Delete</a>
 		</div>
     <transition name="expand">
   		<div class="dep-content" v-show="departmentInfo.show">
   			<div>
           <el-form :model="departmentInfo" ref="intro">
-            <el-form-item prop="introduction.input" :rules="{required: true, message: '部门介绍不能为空', trigger: 'blur'}">
+            <el-form-item prop="introduction.input" :rules="{required: true, message: 'Department introduction can not be empty', trigger: 'blur'}">
   				    <formtextarea :formStyle="departmentintro" :formInput="departmentInfo.introduction"></formtextarea>
             </el-form-item>
           </el-form>
   				<div class="tips">
-  	      	<span>Tips:&nbsp;&nbsp;不建议大量文字，采用每个短句一行会有更好的效果，不得超过15行</span>
+  	      	<span>Tips:&nbsp;&nbsp;No more than 15 lines</span>
   	    	</div>
   			</div>
       	<div style="margin-left:13px;margin-top:7px">
-          <span class="title">部门图片*(9:16)</span>
+          <span class="title">Image* (9:16)</span>
           <div class="wrapper">
-            <p @click="addDepartPicture">更换图片</p>
+            <p @click="addDepartPicture">Change Image</p>
             <img style="width:114px;height:190px;" @click="addDepartPicture" :src="departmentInfo.image">
             </img>
           </div>
-      		<greenbutton name="保 存" v-on:submit="submitForm('intro')"></greenbutton>
+      		<greenbutton name="Save" v-on:submit="submitForm('intro')"></greenbutton>
       	</div>
   		</div>
     </transition>
@@ -60,7 +60,7 @@ export default{
   computed: {
     departmentintro () {
       return {
-        label: '部门介绍*',
+        label: 'Introduction*',
         input: this.departmentInfo.introduction.input,
         minrows: 9,
         maxrows: 9
@@ -70,7 +70,7 @@ export default{
   methods: {
     submitForm (formName) {
       this.$refs[formName].validate((valid) => {
-        if (this.departmentInfo.name === '添加部门') {
+        if (this.departmentInfo.name === 'Add Department') {
           this.isdefault = true
         }
         if (valid && !this.isempty && !this.isdefault) {
@@ -89,7 +89,7 @@ export default{
               deptLoading.close()
               if (res.status === RES_STATUS.SUCCESS) {
                 Message({
-                  message: '修改成功，手动清除App缓存即可查看',
+                  message: 'Modify successfully',
                   type: 'success',
                   showClose: true
                 })
@@ -98,36 +98,36 @@ export default{
                   var errorMsg = ''
                   switch (res.msg.hint) {
                     case 'name':
-                      errorMsg = '部门名称'
+                      errorMsg = 'Department name'
                       break
                     case 'image':
-                      errorMsg = '部门图片'
+                      errorMsg = 'Department image'
                       break
                     case 'introduction':
-                      errorMsg = '部门介绍'
+                      errorMsg = 'Department introduction'
                       break
-                    default: errorMsg = '部门信息'
+                    default: errorMsg = 'Department information'
                   }
                   Message({
-                    message: errorMsg + '有误，保存失败',
+                    message: errorMsg + 'is error, please modify and try again',
                     type: 'error',
                     showClose: true
                   })
                 } else if (res.status === RES_STATUS.SERVER_ERROR) {
                   Message({
-                    message: '服务器错误',
+                    message: 'Server error',
                     type: 'error',
                     showClose: true
                   })
                 } else if (res.status === RES_STATUS.NOT_FOUND) {
                   Message({
-                    message: '页面不存在',
+                    message: 'Page does not exist',
                     type: 'error',
                     showClose: true
                   })
                 } else {
                   Message({
-                    message: '未知错误',
+                    message: 'Unknown mistake',
                     type: 'error',
                     showClose: true
                   })
@@ -136,7 +136,7 @@ export default{
             }).catch((err) => {
               deptLoading.close()
               Message({
-                message: '服务器错误',
+                message: 'Server error',
                 type: 'error'
               })
               console.error(err)
@@ -144,7 +144,7 @@ export default{
           }
         } else {
           Message({
-            message: '信息提交失败',
+            message: 'Information is error, please modify and try again',
             type: 'error',
             showClose: true
           })
@@ -154,7 +154,7 @@ export default{
     },
     showContent () {
       this.departmentInfo.show = !this.departmentInfo.show
-      if (this.departmentInfo.name === '添加部门' && this.departmentInfo.show === true && this.departmentInfo.id === '-1') {
+      if (this.departmentInfo.name === 'Add Department' && this.departmentInfo.show === true && this.departmentInfo.id === '-1') {
         this.departmentInfo.name = ''
         this.editable = true
       }
@@ -163,7 +163,7 @@ export default{
       if (this.departmentInfo.name === '') {
         this.isempty = true
       }
-      if (this.departmentInfo.name !== '添加部门') {
+      if (this.departmentInfo.name !== 'Add Department') {
         this.isdefault = false
       }
       if (this.departmentInfo.name !== '') {
@@ -172,7 +172,7 @@ export default{
     },
     editName () {
       if (this.departmentInfo.id === '-1' && this.editable === true && this.departmentInfo.name === '') {
-        this.departmentInfo.name = '添加部门'
+        this.departmentInfo.name = 'Add Department'
         this.editable = false
         this.isempty = false
       } else if (this.editable === false) {

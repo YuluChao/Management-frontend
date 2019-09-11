@@ -1,8 +1,8 @@
 <template>
 	<div id="department">
     <div class="dep-num">
-      <span class="title">部门列表</span>
-      <span class="remark">当前部门数：{{ departments.length }}</span>
+      <span class="title">Department List</span>
+      <span class="remark">Current Department Num：{{ departments.length }}</span>
     </div>
     <div class="list" >
       <transition-group name="up">
@@ -25,13 +25,13 @@
       </departmentitem>
     </div>
     <div class="tips">
-      <span>Tips:&nbsp;&nbsp;点击标题可以进行修改，点击右侧向上箭头可以调整顺序</span>
+      <span>Tips:&nbsp;&nbsp;Click the title to edit the content;Click the arrow on the right to adjust the order</span>
     </div>
-    <el-dialog title="确认删除" v-model="dialogVisible" top="30%" :show-close="false">
-      <span>确认删除部门“{{ deleteDepartmentName }}”吗？</span>
+    <el-dialog title="Delete" v-model="dialogVisible" top="30%" :show-close="false">
+      <span>Are you sure to delete “{{ deleteDepartmentName }}”?</span>
       <div slot="footer">
-        <button type="button" class="cancel" @click="dialogVisible = false">取 消</button>
-        <button type="button" class="confirm" v-on:click="deleteConfirm">确&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;定</button>
+        <button type="button" class="cancel" @click="dialogVisible = false">Cancel</button>
+        <button type="button" class="confirm" v-on:click="deleteConfirm">OK</button>
       </div>
     </el-dialog>
     <vue-core-image-upload  
@@ -41,7 +41,7 @@
       extensions="image/jpg,image/jpeg,image/png"
       :max-file-size="512000"
       text=""
-      :cropBtn="{ok:'确 定',cancel:'取 消'}"
+      :cropBtn="{ok:'OK',cancel:'Cancel'}"
       @imagechanged="deptChanged"
       @errorhandle="errorHandle"
     >
@@ -68,7 +68,7 @@ export default {
     return {
       departments: [],
       defaultDepartment: {
-        name: '添加部门',
+        name: 'Add Department',
         introduction: {input: ''},
         image: deptImg,
         show: false,
@@ -99,13 +99,13 @@ export default {
               show: false,
               id: res.data.dept_id
             })
-            this.defaultDepartment.name = '添加部门'
+            this.defaultDepartment.name = 'Add Department'
             this.defaultDepartment.introduction.input = ''
             this.defaultDepartment.image = deptImg
             this.defaultDepartment.show = false
             this.defaultDepartment.id = '-1'
             Message({
-              message: '添加成功，手动清除App缓存即可查看',
+              message: 'Add successfully',
               type: 'success',
               showClose: true
             })
@@ -114,36 +114,36 @@ export default {
               var errorMsg = ''
               switch (res.msg.hint) {
                 case 'name':
-                  errorMsg = '部门名称'
+                  errorMsg = 'Department name'
                   break
                 case 'image':
-                  errorMsg = '部门图片'
+                  errorMsg = 'Department image'
                   break
                 case 'introduction':
-                  errorMsg = '部门介绍'
+                  errorMsg = 'Department introduction'
                   break
-                default: errorMsg = '部门信息'
+                default: errorMsg = 'Department information'
               }
               Message({
-                message: errorMsg + '有误，添加失败',
+                message: errorMsg + 'is error，pleas modify and try again',
                 type: 'error',
                 showClose: true
               })
             } else if (res.status === RES_STATUS.SERVER_ERROR) {
               Message({
-                message: '服务器错误',
+                message: 'Server error',
                 type: 'error',
                 showClose: true
               })
             } else if (res.status === RES_STATUS.NOT_FOUND) {
               Message({
-                message: '页面不存在',
+                message: 'Page does not exist',
                 type: 'error',
                 showClose: true
               })
             } else {
               Message({
-                message: '未知错误',
+                message: 'Unknown mistake',
                 type: 'error',
                 showClose: true
               })
@@ -152,14 +152,14 @@ export default {
         }).catch((res) => {
           deptLoading.close()
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         })
       } else {
         Message({
-          message: '图片不能为空',
+          message: 'Image can not be empty',
           type: 'error',
           showClose: true
         })
@@ -186,25 +186,25 @@ export default {
             }
           }
           Message({
-            message: '删除成功',
+            message: 'Delete successfully',
             type: 'success'
           })
         } else {
           if (res.status === RES_STATUS.SERVER_ERROR) {
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error',
               showClose: true
             })
           } else if (res.status === RES_STATUS.NOT_FOUND) {
             Message({
-              message: '页面不存在',
+              message: 'Page does not exist',
               type: 'error',
               showClose: true
             })
           } else {
             Message({
-              message: '未知错误',
+              message: 'Unknown mistake',
               type: 'error',
               showClose: true
             })
@@ -213,7 +213,7 @@ export default {
       }).catch((res) => {
         delLoading.close()
         Message({
-          message: '服务器错误',
+          message: 'Server error',
           type: 'error',
           showClose: true
         })
@@ -243,26 +243,26 @@ export default {
           if (res.status === RES_STATUS.SUCCESS) {
             Message({
               type: 'success',
-              message: '调整顺序成功',
+              message: 'Adjust order successfully',
               showClose: true
             })
             this.departments[index] = this.departments.splice(index - 1, 1, this.departments[index])[0]
           } else {
             if (res.status === RES_STATUS.SERVER_ERROR) {
               Message({
-                message: '服务器错误',
+                message: 'Server error',
                 type: 'error',
                 showClose: true
               })
             } else if (res.status === RES_STATUS.NOT_FOUND) {
               Message({
-                message: '页面不存在',
+                message: 'Page does not exist',
                 type: 'error',
                 showClose: true
               })
             } else {
               Message({
-                message: '未知错误',
+                message: 'Unknown mistake',
                 type: 'error',
                 showClose: true
               })
@@ -272,7 +272,7 @@ export default {
           upLoading.close()
           console.error(err)
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
@@ -282,13 +282,13 @@ export default {
     errorHandle () {
       if (arguments[0] === 'TYPE ERROR') {
         Message({
-          message: '图片格式必须为png，jpeg或jpg',
+          message: 'Image format must be png, jpeg or jpg',
           type: 'error',
           showClose: true
         })
       } else if (arguments[0] === 'FILE IS TOO LARGER MAX FILE IS 500.00kB') {
         Message({
-          message: '图片大小不能超过500KB',
+          message: 'Image size can not exceed 500KB',
           type: 'error',
           showClose: true
         })
@@ -312,13 +312,13 @@ export default {
       } else {
         if (res.status === RES_STATUS.SERVER_ERROR) {
           Message({
-            message: '服务器错误',
+            message: 'Server error',
             type: 'error',
             showClose: true
           })
         } else if (res.status === RES_STATUS.NOT_FOUND) {
           Message({
-            message: '页面不存在',
+            message: 'Page does not exist',
             type: 'error',
             showClose: true
           })
@@ -326,7 +326,7 @@ export default {
           window.location.href = 'https://link.xjtu.edu.cn/clubManagement'
         } else {
           Message({
-            message: '未知错误',
+            message: 'Unknown mistake',
             type: 'error',
             showClose: true
           })
@@ -335,7 +335,7 @@ export default {
     }).catch((res) => {
       isLoading.close()
       Message({
-        message: '服务器错误',
+        message: 'Server error',
         type: 'error',
         showClose: true
       })

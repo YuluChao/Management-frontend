@@ -2,7 +2,7 @@
   <div id="login">
       <div class="login-header">
           <div>
-            <p>西交Link社团管理页面</p>
+            <p>Link Club Management</p>
           </div>
         </div>
       <div class="login-content">
@@ -10,20 +10,20 @@
             <img src="../../assets/images/link_page.png" alt="">
         </div>
         <div class="right">
-          <p>社团管理员登录</p>
+          <p>Club Administrator Login</p>
         <el-form :model="password" ref="password">
-            <el-form-item prop="input" :rules="{required: true, message: '社团邀请码不能为空', trigger: 'blur,change'}">
-                <forminput :formStyle="{label: '邀请码*',remark: '请使用非IE浏览器登录'}" :formInput="password"></forminput>
+            <el-form-item prop="input" :rules="{required: true, message: 'Code can not be empty', trigger: 'blur,change'}">
+                <forminput :formStyle="{label: 'Code*',remark: 'Please use non-IE browser'}" :formInput="password"></forminput>
               </el-form-item>
           </el-form>  
           
-          <button v-on:click="submitForm('password')">登&nbsp;&nbsp;&nbsp;&nbsp;录</button><div class="tips">
-            <span>Tips:&nbsp;&nbsp;若邀请码未知，请微信联系：qushuaicheng</span>
+          <button v-on:click="submitForm('password')">Login</button><div class="tips">
+            <span>Tips:&nbsp;&nbsp;If you do not know code, please contact us</span>
         </div>
           </div>
       </div> 
       <div class="login-footer">
-        <p>Copyright © 2017 IC·LINK<a href="http://link.xjtu.edu.cn/join.html">Join</a></p>  
+        <p>Copyright © 2019 IC·LINK<a href="http://yuluchao.github.io">Join</a></p>  
       </div>  
   </div>
 </template>
@@ -63,7 +63,7 @@ export default{
             if (res.status === RES_STATUS.SUCCESS) {
               this.$router.replace('/club/basic/')
               Message({
-                message: '登录成功',
+                message: 'Login successfully',
                 type: 'success',
                 showClose: true
               })
@@ -76,19 +76,19 @@ export default{
                 })
               } else if (res.status === RES_STATUS.SERVER_ERROR) {
                 Message({
-                  message: '服务器错误',
+                  message: 'Server error',
                   type: 'error',
                   showClose: true
                 })
               } else if (res.status === RES_STATUS.NOT_FOUND) {
                 Message({
-                  message: '页面不存在',
+                  message: 'Page does not exist',
                   type: 'error',
                   showClose: true
                 })
               } else {
                 Message({
-                  message: '未知错误',
+                  message: 'Unknown mistake',
                   type: 'error',
                   showClose: true
                 })
@@ -98,13 +98,13 @@ export default{
             console.log(res)
             this.isLoginLoading = false
             Message({
-              message: '服务器错误',
+              message: 'Server error',
               type: 'error'
             })
           })
         } else {
           Message({
-            message: '信息有误，提交失败',
+            message: 'Information is error, please modify and try again',
             type: 'error',
             showClose: true
           })
