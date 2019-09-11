@@ -1,0 +1,538 @@
+[
+	{
+		"request": {
+			"url": "^/web/club/login/$",
+			"method": "POST"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+ 		      		"clubInfo": {
+			            "name": "西交Link",
+			            "summary": "Interestring",           
+			            "introduction": "exciating",
+			            "locale": ["雁塔校区"],
+			            "type": "科技类",
+			            "image": "",
+			            "logo": "",
+			            "tag": "我们社团很厉害",            
+			            "email": "284013045@qq.com",
+			            "apply_url": "http://www.baidu.com",
+			            "show_type": "native",
+			            "url": "http://www.baidu.com"
+		        	}
+		        }
+		    }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/logout/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		    "headers": {
+		        "Content-Type": "application/json"
+		    },
+		    "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		    }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+ 		      		"clubInfo": {
+			            "name": "西交Link",
+			            "summary": "Interestring",           
+			            "introduction": "exciating",
+			            "locale": ["雁塔校区"],
+			            "type": "科技类",
+			            "image": "",
+			            "logo": "",
+			            "tag": "我们社团很厉害",            
+			            "email": "284013045@qq.com",
+			            "apply_url": "http://www.baidu.com",
+			            "show_type": "app",
+			            "url": "http://www.baidu.com"
+		        	}
+		        }
+		    }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/dept/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+ 		      		"depts": [
+			            {
+			                "dept_id": "1",
+			                "name": "活动部",
+			                "image": "",
+			                "introduction": "哈哈哈哈哈哈"
+			            },
+			            {
+			                "dept_id": "2",
+			                "name": "啊啊啊部",
+			                "image": "",
+			                "introduction": "哈哈哈哈哈哈"
+			            },
+			            {
+			                "dept_id": "3",
+			                "name": "你猜部",
+			                "image": "",
+			                "introduction": "哈哈哈哈哈哈"
+			            }
+		        	]
+		        }
+		    }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/dept/$",
+			"method": "POST"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     		"dept_id": "10"
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/dept/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/dept/order/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/dept/$",
+			"method": "DELETE"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/activity/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+ 		      		"activities": [
+			            {
+			                "activity_id": "1",
+			                "name": "K歌之王",
+			                "image": "",
+			                "tag": "精品活动",
+			                "introduction": "Interestring"
+			            },
+			            {
+			                "activity_id": "2",
+			                "name": "诗歌朗诵大赛",
+			                "image": "",
+			                "tag": "普通比赛",
+			                "introduction": "exciating"
+			            }
+			        ]
+		        }
+		    }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/activity/$",
+			"method": "POST"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     		"activity_id": "12"
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/activity/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/activity/order/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/activity/$",
+			"method": "DELETE"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/contact/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     		"email": "1000@qq.com",
+		     		"phone": "1000000"
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/contact/$",
+			"method": "PUT"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     	}
+		     }
+		}
+	},
+	{
+		"request": {
+			"url": "^/web/club/record/$",
+			"method": "GET"
+		},
+		"response": {
+			"status": 200,
+		     "headers": {
+		        "Content-Type": "application/json"
+		     },
+		     "body": {
+		     	"status": 200,
+		     	"message": "Success",
+		     	"data": {
+		     		"records": [
+			            {
+					        "name": "郭家琪",
+					        "content": "修改基本信息",
+					        "time": "2017-6-18 14:01"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:02"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:03"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:04"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:05"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:06"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:07"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:08"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:09"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:10"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:11"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:12"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:13"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:14"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:15"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:16"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:17"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:18"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:19"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:20"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:21"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:22"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:23"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:24"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:25"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:26"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:27"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:28"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:29"
+					    }, 
+					    {
+					        "name": "李云鹏",
+					        "content": "修改部门信息",
+					        "time": "2017-6-18 14:30"
+					    }, 
+					    {
+					        "name": "郑璇之",
+					        "content": "修改活动信息",
+					        "time": "2017-6-18 14:31"
+					    }, 
+					    {
+					        "name": "钞雨露",
+					        "content": "修改联系方式",
+					        "time": "2017-6-18 14:32"
+					    }  
+			        ]
+		     	}
+		     }
+		}
+	}
+]

@@ -1,0 +1,9 @@
+export const SUCCESS = 200
+export const ENTITY_DOE_NOT_EXIST = 203
+export const SHOW_CUSTOM_MESSAGE = 205
+export const LOGIN_REQUIRED = 300
+export const PARAMETER_ERROR = 400
+export const NETWORK_ERROR = 401
+export const PERMISSTION_DENY = 402
+export const NOT_FOUND = 404
+export const SERVER_ERROR = 500
