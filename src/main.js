@@ -6,6 +6,7 @@ import VueRouter from 'vue-router'
 import router from './router'
 import transform from './api/transform'
 import store from './store'
+import './mock/mock'
 
 Vue.component(Input.name, Input)
 Vue.component(Select.name, Select)

@@ -1,6 +1,6 @@
 import netUtil from './net_util'
 
-const BASIC_URL = '/web/club/'
+const BASIC_URL = '/web/club/basic/'
 
 export default {
   getClubInfo (context) {
