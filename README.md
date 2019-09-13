@@ -44,7 +44,7 @@ stubby -d ./api_service/api.json -w
 
 ##### Login
 
-```json
+```
 path: /web/club/login/
 method: post
 params: 
@@ -76,7 +76,7 @@ return
 
 ##### Logout
 
-```json
+```
 path: /web/club/logout/
 ```
 
@@ -86,7 +86,7 @@ path: /web/club/logout/
 
 ##### Get Club Information
 
-```json
+```
 path: /web/club/basic/
 method: get
 return
@@ -116,7 +116,7 @@ return
 
 #####  Modify Club Information
 
-```json
+```
 path: /web/club/basic/
 method: put
 Fields:
@@ -139,7 +139,7 @@ Fields:
 ---
 
 ##### Get Contact
-```json
+```
 path: /web/club/contact/
 method: get
 return
@@ -155,7 +155,7 @@ return
 
 ##### Modify Contact
 
-```json
+```
 path: /web/club/contact/
 method: put
 params:
@@ -176,7 +176,7 @@ return
 
 ##### Get Department Information
 
-```json
+```
 path: /web/club/dept/
 method: get
 return
@@ -204,7 +204,7 @@ return
 
 ##### Add Department
 
-```json
+```
 path: /web/club/dept/
 method: post
 (form-data)
@@ -212,7 +212,7 @@ method: post
 
 ##### Delete Department
 
-```json
+```
 path: /web/club/dept/
 method: delete
 params:
@@ -230,7 +230,7 @@ return
 
 ##### Modify Department
 
-```json
+```
 path: /web/club/dept/
 method: put
 params:
@@ -250,7 +250,7 @@ return
 
 ##### Modify Department Order
 
-```json
+```
 path: /web/club/dept/order/
 method: put
 params:
@@ -272,7 +272,7 @@ return
 
 ##### Get Activity Information
 
-```json
+```
 path: /web/club/activity/
 method: get
 return
@@ -302,7 +302,7 @@ return
 
 ##### Add Activity
 
-```json
+```
 path: /web/club/activity/
 method: post
 (form-data)
@@ -310,7 +310,7 @@ method: post
 
 ##### Delete Activity
 
-```json
+```
 path: /web/club/activity/
 method: delete
 params: 
@@ -329,7 +329,7 @@ return
 
 ##### Modify Activity
 
-```json
+```
 path: /web/club/activity/
 method: put
 params:
@@ -349,7 +349,7 @@ return
 
 ##### Modify Activity Order
 
-```json
+```
 path: /web/club/activity/order/
 method: put
 params:
@@ -371,7 +371,7 @@ return
 
 ##### Get History Records
 
-```json
+```
 path: /web/club/record/
 method: post
 params: 
